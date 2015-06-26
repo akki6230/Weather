@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C3BC6721B3CF8BA0053D741 /* weatherObjectAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3BC6711B3CF8BA0053D741 /* weatherObjectAPI.m */; };
 		0CB6EC591B390B690064B141 /* homeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CB6EC581B390B690064B141 /* homeVC.m */; };
 		0CE491081B37AA9E00B6417D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE491071B37AA9E00B6417D /* main.m */; };
 		0CE4910B1B37AA9E00B6417D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE4910A1B37AA9E00B6417D /* AppDelegate.m */; };
@@ -29,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C3BC6701B3CF8BA0053D741 /* weatherObjectAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = weatherObjectAPI.h; sourceTree = "<group>"; };
+		0C3BC6711B3CF8BA0053D741 /* weatherObjectAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = weatherObjectAPI.m; sourceTree = "<group>"; };
 		0CB6EC571B390B690064B141 /* homeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = homeVC.h; sourceTree = "<group>"; };
 		0CB6EC581B390B690064B141 /* homeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = homeVC.m; sourceTree = "<group>"; };
 		0CE491021B37AA9E00B6417D /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +68,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C3BC6731B3CF8BF0053D741 /* weatherObjectAPI */ = {
+			isa = PBXGroup;
+			children = (
+				0C3BC6701B3CF8BA0053D741 /* weatherObjectAPI.h */,
+				0C3BC6711B3CF8BA0053D741 /* weatherObjectAPI.m */,
+			);
+			name = weatherObjectAPI;
+			sourceTree = "<group>";
+		};
 		0CB6EC561B390B480064B141 /* homeVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +124,7 @@
 		0CE491051B37AA9E00B6417D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0C3BC6731B3CF8BF0053D741 /* weatherObjectAPI */,
 				0CE491061B37AA9E00B6417D /* Info.plist */,
 				0CE491071B37AA9E00B6417D /* main.m */,
 			);
@@ -239,6 +252,7 @@
 				0CE4910E1B37AA9E00B6417D /* ViewController.m in Sources */,
 				0CB6EC591B390B690064B141 /* homeVC.m in Sources */,
 				0CE4910B1B37AA9E00B6417D /* AppDelegate.m in Sources */,
+				0C3BC6721B3CF8BA0053D741 /* weatherObjectAPI.m in Sources */,
 				0CE491081B37AA9E00B6417D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
