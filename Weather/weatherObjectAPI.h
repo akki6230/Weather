@@ -9,5 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface weatherObjectAPI : NSObject
+{
+    NSDictionary *dicToPass;
+    NSData *dataResponse;
+}
+-(void)getCurrentWeatherWithlattitude:(NSString *)lat longitude:(NSString *)lon competionHandler:(void(^)(NSDictionary *dic, NSError *error))handler;
 
 @end

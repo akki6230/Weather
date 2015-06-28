@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F1077" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment version="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -64,6 +64,10 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="503"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="XJa-22-xZ2">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="503"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5:30 am" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dGn-uA-2K2">
                                                         <rect key="frame" x="221" y="423" width="89" height="25"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -165,7 +169,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="26" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6ZM-yH-Nha">
-                                                        <rect key="frame" x="276" y="221" width="22" height="21"/>
+                                                        <rect key="frame" x="260" y="221" width="59" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -201,7 +205,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="36" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QDd-C6-mGh">
-                                                        <rect key="frame" x="26" y="221" width="22" height="21"/>
+                                                        <rect key="frame" x="6" y="221" width="68" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -223,13 +227,6 @@
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gurgaon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="C8c-hc-xKb">
-                                                        <rect key="frame" x="0.0" y="151" width="320" height="42"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
-                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7:12 pm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="waA-r1-B2v">
                                                         <rect key="frame" x="223" y="463" width="89" height="25"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -237,10 +234,13 @@
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="XJa-22-xZ2">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="503"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gurgaon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="C8c-hc-xKb">
+                                                        <rect key="frame" x="0.0" y="149" width="320" height="42"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.018650349310000001" green="0.37550741859999998" blue="0.44897959180000002" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
@@ -355,17 +355,26 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
-                        <outlet property="lblCurrent" destination="3In-ya-xKY" id="4Ut-vz-znx"/>
+                        <outlet property="lblCurrent" destination="3In-ya-xKY" id="dwL-8D-Zt4"/>
+                        <outlet property="lblCurrentTemp" destination="Bgd-Uv-Vch" id="0ad-bU-HDc"/>
                         <outlet property="lblFav" destination="Sbs-gd-F4Z" id="ITc-Dk-kyj"/>
+                        <outlet property="lblHumidity" destination="Aci-yQ-lIH" id="uK2-ab-rHP"/>
+                        <outlet property="lblLocationName" destination="C8c-hc-xKb" id="Ykv-F8-rgl"/>
+                        <outlet property="lblSunset" destination="waA-r1-B2v" id="RM8-ad-vCZ"/>
+                        <outlet property="lblTempMax" destination="QDd-C6-mGh" id="hka-aJ-Kew"/>
+                        <outlet property="lblTempMin" destination="6ZM-yH-Nha" id="Lhl-FV-mAp"/>
                         <outlet property="lblToday" destination="LQC-MQ-5l4" id="A7V-fp-56v"/>
+                        <outlet property="lblVisibility" destination="DvY-Bv-AHp" id="8d5-P9-QEM"/>
+                        <outlet property="lblWInd" destination="dwk-F5-qsS" id="V4S-ML-S8c"/>
                         <outlet property="lblWeekDays" destination="JXH-fg-RRu" id="frp-4m-B5Q"/>
+                        <outlet property="lblsunrise" destination="dGn-uA-2K2" id="Ojb-iG-26g"/>
                         <outlet property="scrollViewWether" destination="h7q-TY-BLO" id="niN-o2-gvQ"/>
                         <outlet property="tableViewToday" destination="V5c-x2-0T0" id="i7i-Ok-hEI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74" y="128"/>
+            <point key="canvasLocation" x="86" y="18"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

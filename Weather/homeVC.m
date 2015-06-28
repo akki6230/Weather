@@ -17,12 +17,78 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // work for lat long
+    loctaionManager = [CLLocationManager new];
+    loctaionManager.delegate = self;
+    loctaionManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+    loctaionManager.distanceFilter = kCLDistanceFilterNone;
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+    {
+        [loctaionManager requestAlwaysAuthorization];
+        [loctaionManager requestWhenInUseAuthorization];
+    }
+
+        [loctaionManager startUpdatingLocation];
+    
+    
     _scrollViewWether.scrollEnabled =YES;
     _scrollViewWether.contentSize = CGSizeMake(_scrollViewWether.frame.size.width * 4, _scrollViewWether.frame.size.height);
     
     // Do any additional setup after loading the view.
 }
 
+#pragma mark - CoreLocation Delegate
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"%@",error);
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    NSLog(@"Current location = %@",newLocation);
+    
+    CLLocation *currentLocation;
+    
+    CLGeocoder *geoCoder = [CLGeocoder new];
+    currentLocation = [[CLLocation alloc] initWithLatitude:newLocation.coordinate.latitude longitude:newLocation.coordinate.longitude];
+    [geoCoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+        
+        CLPlacemark *placemark = [placemarks objectAtIndex:0];
+       // NSLog(@"placemark %@",placemark);
+        //String to hold address
+       // NSString *locatedAt = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@", "];
+//        NSLog(@"addressDictionary %@", placemark.addressDictionary);
+//        NSLog(@"placemark %@",placemark.country);  // Give Country Name
+//        NSLog(@"placemark %@",placemark.locality); // Extract the city name
+        
+        NSString *strLati = [NSString stringWithFormat:@"%.8f",newLocation.coordinate.latitude];
+        NSString *strLong = [NSString stringWithFormat:@"%.8f",newLocation.coordinate.longitude];
+        
+        _lblLocationName.text = placemark.locality;
+        
+        weatherObjectAPI *weatherObj = [[weatherObjectAPI alloc] init];
+        [weatherObj getCurrentWeatherWithlattitude:strLati longitude:strLong competionHandler:^(NSDictionary *dic, NSError *error) {
+            if (!error)
+            {
+            _lblCurrentTemp.text = [[dic objectForKey:@"main"] objectForKey:@"temp"];
+            _lblTempMax.text = [[dic objectForKey:@"main"] objectForKey:@"temp_max"];
+            _lblTempMin.text = [[dic objectForKey:@"main"] objectForKey:@"temp_min"];
+            _lblVisibility.text = [dic objectForKey:@"visibility"];
+                
+            _lblHumidity.text = [[dic objectForKey:@"main"] objectForKey:@"humidity"];
+            //_lblVisibility.text = [[dic objectForKey:@"main"] ;
+            _lblWInd.text = [[dic objectForKey:@"main"] objectForKey:@"temp"];
+           // _lblsunrise.text = [[dic objectForKey:@"sys"] objectForKey:@"temp"];
+           // _lblSunset.text = [[dic objectForKey:@"sys"] objectForKey:@"temp"];
+                
+            }
+            
+        }];
+        
+    }];
+    
+}
+#pragma mark - scrollView delegate
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     if (_scrollViewWether.contentOffset.x == 0)
