@@ -2,7 +2,7 @@
 //  homeVC.m
 //  Weather
 //
-//  Created by Anoop Gupta on 23/06/15.
+//  Created by Ankit Neo GHz on 23/06/15.
 //  Copyright (c) 2015 Ankit Neo GHz. All rights reserved.
 //
 
@@ -70,17 +70,40 @@
         [weatherObj getCurrentWeatherWithlattitude:strLati longitude:strLong competionHandler:^(NSDictionary *dic, NSError *error) {
             if (!error)
             {
-            _lblCurrentTemp.text = [[dic objectForKey:@"main"] objectForKey:@"temp"];
-            _lblTempMax.text = [[dic objectForKey:@"main"] objectForKey:@"temp_max"];
-            _lblTempMin.text = [[dic objectForKey:@"main"] objectForKey:@"temp_min"];
-            _lblVisibility.text = [dic objectForKey:@"visibility"];
                 
-            _lblHumidity.text = [[dic objectForKey:@"main"] objectForKey:@"humidity"];
-            //_lblVisibility.text = [[dic objectForKey:@"main"] ;
-            _lblWInd.text = [[dic objectForKey:@"main"] objectForKey:@"temp"];
-           // _lblsunrise.text = [[dic objectForKey:@"sys"] objectForKey:@"temp"];
-           // _lblSunset.text = [[dic objectForKey:@"sys"] objectForKey:@"temp"];
+            // location name
+            _lblLocationName.text = [NSString stringWithFormat:@"%@",[dic objectForKey:@"name"]];
+              
+             // current temp
+            _lblCurrentTemp.text = [NSString stringWithFormat:@"%@",[[dic objectForKey:@"main"] objectForKey:@"temp"]];
+            _lblCurrentTemp.text = [NSString stringWithFormat:@"%@",[self getTempInCelciusFromKelvin:_lblCurrentTemp.text]];
+              
+            // Maximum temp
+            _lblTempMax.text = [NSString stringWithFormat:@"%@",[[dic objectForKey:@"main"] objectForKey:@"temp_max"]];
+            _lblTempMax.text = [NSString stringWithFormat:@"%@",[self getTempInCelciusFromKelvin:_lblTempMax.text]];
                 
+             // Minimum temp
+            _lblTempMin.text = [NSString stringWithFormat:@"%@",[[dic objectForKey:@"main"] objectForKey:@"temp_min"]];
+            _lblTempMin.text = [NSString stringWithFormat:@"%@",[self getTempInCelciusFromKelvin:_lblTempMin.text]];
+              
+             // visibility
+            _lblVisibility.text = [NSString stringWithFormat:@"%@",[dic objectForKey:@"visibility"]];
+            NSInteger intVis = [_lblVisibility.text integerValue]/ 1000;
+            _lblVisibility.text = [NSString stringWithFormat:@"%ld%@",intVis,@" km"];
+               
+              // humidity
+            _lblHumidity.text = [NSString stringWithFormat:@"%@%@",[[dic objectForKey:@"main"] objectForKey:@"humidity"], @" %"];
+            _lblWInd.text = [NSString stringWithFormat:@"%@%@",[[dic objectForKey:@"wind"] objectForKey:@"speed"],@"kmph"];
+            
+                // sunrise time
+           _lblsunrise.text = [NSString stringWithFormat:@"%@",[[dic objectForKey:@"sys"] objectForKey:@"sunrise"]];
+            _lblsunrise.text = [NSString stringWithFormat:@"%@%@",[self getDateFromUnixFormat:_lblsunrise.text], @" am"];
+             
+            // sunset time
+             _lblSunset.text = [NSString stringWithFormat:@"%@",[[dic objectForKey:@"sys"] objectForKey:@"sunset" ]];
+             _lblSunset.text = [NSString stringWithFormat:@"%@%@",[self getDateFromUnixFormat:_lblSunset.text], @" pm"];
+                
+            
             }
             
         }];
@@ -88,6 +111,31 @@
     }];
     
 }
+
+// get Time
+- (NSString *) getDateFromUnixFormat:(NSString *)unixFormat
+{
+    
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:[unixFormat intValue]];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"MMM dd, yyyy-h:mm"];
+    [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
+    NSString *dte=[dateFormatter stringFromDate:date];
+    
+    NSArray *arrTime = [dte componentsSeparatedByString:@"-"];
+    
+    return [arrTime objectAtIndex:1];
+    
+}
+
+// get Temp
+-(NSString *)getTempInCelciusFromKelvin:(NSString *)tempKelvin
+{
+    NSInteger temp = [tempKelvin integerValue] - 273.15;
+    return [NSString stringWithFormat:@"%ld",temp];
+}
+
+
 #pragma mark - scrollView delegate
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
